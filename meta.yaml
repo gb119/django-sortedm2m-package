@@ -1,0 +1,40 @@
+{% set name = "django-sortedm2m" %}
+{% set version = "3.1.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 136f3d4e0820b351608a7141d88ac3ba7fafcd37a9b8361ad00ffe616a790be5
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python
+    - django
+  run:
+    - python
+    - django
+
+test:
+  imports:
+    - sortedm2m
+
+about:
+  home: "https://github.com/jazzband/django-sortedm2m"
+  license: BSD
+  license_family: BSD
+  license_file: 
+  summary: "Drop-in replacement for Django's many to many field with sorted relations."
+  doc_url: https://github.com/jazzband/django-sortedm2m
+  dev_url: https://github.com/jazzband/django-sortedm2m
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
