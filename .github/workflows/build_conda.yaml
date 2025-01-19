@@ -9,11 +9,7 @@ on:
 jobs:
   conda_deployment_with_new_tag:
     name: Conda deployment of package for platform ${{ matrix.os }} with Python ${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macOS-latest, ubuntu-latest, windows-latest]
-        python-version: ["3.8", "3.9", "3.10"]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -21,7 +17,7 @@ jobs:
       - name: Conda environment creation and activation
         uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.10"
           environment-file: env.yaml
           activate-environment: build
           auto-update-conda: true
@@ -32,7 +28,7 @@ jobs:
         with:
           meta_yaml_dir: .
           overwrite: true
-          python-version: ${{ matrix.python-version }} # Values previously defined in `matrix`
+          python-version: "3.10"
           user: phygbu
           label: main
           token: ${{ secrets.ANACONDA }} # Replace with the right name of your secret
