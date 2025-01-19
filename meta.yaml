@@ -8,6 +8,7 @@ package:
 source:
   git_url: https://github.com/jazzband/django-sortedm2m.git
   git_rev: "{{ version }}"
+  folder: build
 
 build:
   number: 0
