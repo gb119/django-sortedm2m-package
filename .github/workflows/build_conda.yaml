@@ -23,10 +23,6 @@ jobs:
           auto-update-conda: true
           auto-activate-base: false
           show-channel-urls: true
-      - name: Move to sub dire
-        run: |
-            mkdir build
-            cd build
       - name: Build and upload the conda packages
         uses: uibcdf/action-build-and-upload-conda-packages@v1.4.0
         with:
