@@ -1,13 +1,13 @@
 {% set name = "django-sortedm2m" %}
-{% set version = "3.1.1" %}
+{% set version = "4.0.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 136f3d4e0820b351608a7141d88ac3ba7fafcd37a9b8361ad00ffe616a790be5
+  git_url: https://github.com/jazzband/django-sortedm2m.git
+  git_rev: "{{ version }}"
 
 build:
   number: 0
